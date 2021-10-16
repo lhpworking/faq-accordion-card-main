@@ -1,0 +1,200 @@
+.faq {
+    &-container {
+        position : absolute;
+        top      : 50%;
+        left     : 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &-card {
+        position           : relative;
+        background-image   : url(/images/bg-pattern-desktop.svg);
+        background-repeat  : no-repeat;
+        background-size    : cover;
+        background-position: left -45em bottom -8em;
+        display            : flex;
+        border-radius      : 20px;
+        background-color   : #fff;
+        padding            : 70px 90px 85px 0;
+        gap                : 0 90px;
+        overflow           : hidden;
+    }
+
+    &-img-box {
+        position : fixed;
+        z-index  : 1;
+        top      : 50%;
+        transform: translate(-3px, -30%);
+    }
+
+    &-img {
+        position: relative;
+
+        img {
+            margin: 0 0 0 -90px;
+        }
+    }
+
+    &-title {
+        position   : relative;
+        padding    : 0 0 25px 0;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &-content {
+        position       : relative;
+        display        : flex;
+        justify-content: center;
+        flex-direction : column;
+    }
+
+    &-btn {
+        position        : relative;
+        display         : flex;
+        justify-content : space-between;
+        align-items     : center;
+        width           : 350px;
+        border          : none;
+        outline         : none;
+        padding         : 20px 0 20px 0;
+        background-color: transparent;
+        color           : hsl(238, 29%, 16%);
+        border-bottom   : 1px solid hsl(240, 5%, 91%);
+
+        &:hover {
+            color     : hsl(14, 88%, 65%);
+            transition: all 0.5s;
+        }
+
+        &.isActive {
+            font-weight: 700;
+            transition : all 0.2s;
+            border     : none;
+
+            img {
+                transform : rotate(180deg);
+                transition: all 0.5s;
+            }
+            +.faq-text {
+                display: block;
+            }
+        }
+        img {
+            margin: 0 20px 0 0;
+        }
+    }
+
+    &-text {
+        position     : relative;
+        display      : none;
+        overflow     : hidden;
+        width        : 320px;
+        padding      : 0 0 20px 0;
+        border-bottom: 1px solid hsl(240, 5%, 91%);
+        color        : hsl(240, 6%, 50%);
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .faq {
+        &-card {
+            background-image   : url(/images/bg-pattern-mobile.svg) ;
+            background-repeat : no-repeat;
+            background-size : 80%;
+            background-position :center top -4em;
+            background-origin: content-box;
+            flex-direction  : column;
+            padding         : 30px;
+            gap             : 60px 0;
+            text-align      : left;
+            overflow        : visible;
+        }
+        &-title {
+            padding    : 0 0 15px 0;
+        }
+        &-btn{
+            width:350px;
+        }
+        &-text{
+            width:300px;
+        }
+        &-img-box{
+            display :none;
+        }
+        &-img {
+            margin:-13em 0 0 0;
+            img{
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+@media screen and (max-width: 425px) {
+    .faq {
+        &-btn{
+            width:300px;
+        }
+        &-img-box{
+            display :none;
+        }
+        &-img {
+            margin:-12em 0 0 0;
+            img{
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .faq {
+        &-card{
+            gap: 20px 0;
+            background-size : 60%;
+            background-position :center top -3.5em;
+        }
+        &-img {
+            margin:-9.5em 0 0 0;
+            img{
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    .faq {
+        &-btn{
+            width:250px;
+            gap: 30px 0;
+        }
+        &-text{
+            width:250px;
+        }
+        &-img {
+            margin:-8.5em 0 0 0;
+        }
+    }
+}
+@media screen and (max-width: 280px) {
+    .faq {
+        &-title{
+            padding: 0 0 0 0;
+        }
+        &-btn{
+            width: 200px;
+            padding: 10px 0 10px 0;
+        }
+        &-text{
+            width:200px;
+        }
+        &-img {
+            margin:-7.5em 0 0 0;
+        }
+    }
+}
+
